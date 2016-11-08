@@ -29,9 +29,15 @@
 *
 ******************************************************************************/
 
+USE [master]
+GO
+ALTER DATABASE [AdventureWorks2014] MODIFY FILE ( NAME = N'AdventureWorks2014_Data', MAXSIZE = UNLIMITED, FILEGROWTH = 6291456KB )
+GO
+ALTER DATABASE [AdventureWorks2014] MODIFY FILE ( NAME = N'AdventureWorks2014_Log', MAXSIZE = UNLIMITED, FILEGROWTH = 2097152KB )
+GO
 
 
-USE AdventureWorks2008R2;
+USE [AdventureWorks2014];
 GO
 
 IF OBJECT_ID('Sales.SalesOrderHeaderEnlarged') IS NOT NULL
